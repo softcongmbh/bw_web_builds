@@ -113,7 +113,7 @@ index 468ae88e0c..f4cbb47ecb 100644
            case "showToast":
 +            if (typeof message.text === "string" && typeof crypto.subtle === "undefined") {
 +              message.title = "This browser requires HTTPS to use the web vault";
-+              message.text = "Check the Vaultwarden wiki for details on how to enable it";
++              message.text = "Check the Passwortmanager wiki for details on how to enable it";
 +            }
              this.toastService._showToast(message);
              break;
@@ -300,7 +300,7 @@ index 0790162848..5728616cc8 100644
          this.currentUrl = event.url;
  
 -        let title = i18nService.t("bitWebVault");
-+        let title = "Vaultwarden Web";
++        let title = "Passwortmanager Web";
  
          if (this.currentUrl.includes("/sm/")) {
            title = i18nService.t("bitSecretsManager");
@@ -335,14 +335,9 @@ index 72f0f1f1da..cea0867131 100644
  <div class="container my-5 text-muted text-center">
 -  <environment-selector></environment-selector>
 -  &copy; {{ year }} Bitwarden Inc. <br />
-+  Vaultwarden Web<br />
++  Passwortmanager Web<br />
    {{ "versionNumber" | i18n: version }}
 +  <br /><br />
-+  <div class="small">
-+    A modified version of the Bitwarden&reg; Web Vault for Vaultwarden (an unofficial rewrite of the
-+    Bitwarden&reg; server).<br />
-+    Vaultwarden is not associated with the Bitwarden&reg; project nor Bitwarden Inc.
-+  </div>
  </div>
 diff --git a/apps/web/src/app/layouts/header/web-header.component.html b/apps/web/src/app/layouts/header/web-header.component.html
 index 7cba19b29a..024b14daad 100644
@@ -355,7 +350,7 @@ index 7cba19b29a..024b14daad 100644
 -              <a bitMenuItem href="https://bitwarden.com/help/" target="_blank" rel="noreferrer">
 +              <a
 +                bitMenuItem
-+                href="https://github.com/dani-garcia/vaultwarden"
++                href="https://passwortmanager.at/"
 +                target="_blank"
 +                rel="noreferrer"
 +              >
@@ -505,7 +500,7 @@ index 0b8ea86491..5d98411f46 100644
      <meta name="theme-color" content="#175DDC" />
  
 -    <title page-title>Bitwarden Web vault</title>
-+    <title page-title>Vaultwarden Web</title>
++    <title page-title>Passwortmanager Web</title>
  
      <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png" />
      <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png" />
@@ -531,7 +526,7 @@ index 92a1204c60..d9ff4771a3 100644
 @@ -1,5 +1,5 @@
  {
 -  "name": "Bitwarden Vault",
-+  "name": "Vaultwarden Web",
++  "name": "Passwortmanager Web",
    "icons": [
      {
        "src": "images/icons/android-chrome-192x192.png",
@@ -641,7 +636,7 @@ index ec78a1692a..ce2539585a 100644
 +      this.platformUtilsService.showToast(
 +        "error",
 +        "This browser requires HTTPS to use the web vault",
-+        "Check the Vaultwarden wiki for details on how to enable it",
++        "Check the Passwortmanager wiki for details on how to enable it",
 +      );
 +      return;
 +    }
@@ -689,14 +684,9 @@ index 3323b6eca0..7be291e7f7 100644
      <ng-container *ngIf="!hideYearAndVersion">
 -      <div bitTypography="body2">&copy; {{ year }} Bitwarden Inc.</div>
 -      <div bitTypography="body2">{{ version }}</div>
-+      <div bitTypography="body2">Vaultwarden Web</div>
++      <div bitTypography="body2">Passwortmanager Web</div>
 +      <div bitTypography="body2">Version {{ version }}</div>
 +      <br />
-+      <div class="small">
-+        A modified version of the Bitwarden&reg; Web Vault for Vaultwarden (an unofficial rewrite of
-+        the Bitwarden&reg; server).<br />
-+        Vaultwarden is not associated with the Bitwarden&reg; project nor Bitwarden Inc.
-+      </div>
      </ng-container>
    </footer>
  </main>
