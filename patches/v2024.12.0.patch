@@ -335,9 +335,14 @@ index 72f0f1f1da..cea0867131 100644
  <div class="container my-5 text-muted text-center">
 -  <environment-selector></environment-selector>
 -  &copy; {{ year }} Bitwarden Inc. <br />
-+  Passwortmanager Web<br />
++  Vaultwarden Web<br />
    {{ "versionNumber" | i18n: version }}
 +  <br /><br />
++  <div class="small">
++    
++    
++    
++  </div>
  </div>
 diff --git a/apps/web/src/app/layouts/header/web-header.component.html b/apps/web/src/app/layouts/header/web-header.component.html
 index 7cba19b29a..024b14daad 100644
@@ -350,7 +355,7 @@ index 7cba19b29a..024b14daad 100644
 -              <a bitMenuItem href="https://bitwarden.com/help/" target="_blank" rel="noreferrer">
 +              <a
 +                bitMenuItem
-+                href="https://passwortmanager.at/"
++                href="https://passwortmanager.at"
 +                target="_blank"
 +                rel="noreferrer"
 +              >
@@ -684,9 +689,14 @@ index 3323b6eca0..7be291e7f7 100644
      <ng-container *ngIf="!hideYearAndVersion">
 -      <div bitTypography="body2">&copy; {{ year }} Bitwarden Inc.</div>
 -      <div bitTypography="body2">{{ version }}</div>
-+      <div bitTypography="body2">Passwortmanager Web</div>
++      <div bitTypography="body2">Vaultwarden Web</div>
 +      <div bitTypography="body2">Version {{ version }}</div>
 +      <br />
++      <div class="small">
++        
++       
++        
++      </div>
      </ng-container>
    </footer>
  </main>
